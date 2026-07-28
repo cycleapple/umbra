@@ -116,6 +116,7 @@ public sealed class MapLinkMarkerFactory(IZoneManager zoneManager) : WorldMarker
                     MaxVisibleDistance = maxVisDistance,
                     ShowOnCompass      = showDirection,
                     IsDisabled         = !IsUnlocked(marker),
+                    SubLabel           = IsUnlocked(marker) ? "" : "Unavailable", // TODO: Translate
                 }
             );
         }
@@ -125,6 +126,8 @@ public sealed class MapLinkMarkerFactory(IZoneManager zoneManager) : WorldMarker
 
     private unsafe bool IsUnlocked(ZoneMarker marker)
     {
+        if (marker.DataId == 0) return true; // Fallback for newly added aetherytes that are not in the sheets yet
+
         return marker.Type switch {
             ZoneMarkerType.Aetheryte or ZoneMarkerType.Aethernet => UIState.Instance()->IsAetheryteUnlocked(marker.DataId),
             _ => true,
