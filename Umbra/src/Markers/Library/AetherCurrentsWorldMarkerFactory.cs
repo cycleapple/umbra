@@ -1,4 +1,4 @@
-﻿using Dalamud.Game.ClientState.Objects.Types;
+using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Utility;
 using FFXIVClientStructs.FFXIV.Client.Game.Event;
 using FFXIVClientStructs.FFXIV.Client.Game.Object;
@@ -42,7 +42,7 @@ internal class AetherCurrentsWorldMarkerFactory(IDataManager dataManager, ISeStr
             foreach (var ac in list.AetherCurrents) {
                 if (!ac.IsValid || ac.Value.Quest.IsValid) continue;
 
-                var eObj = dataManager.GetExcelSheet<EObj>().FirstOrNull(e => e.Data == ac.RowId);
+                var eObj = dataManager.GetExcelSheet<EObj>().FirstOrNull(e => e.Data.RowId == ac.RowId);
                 if (eObj == null) continue;
 
                 var level = dataManager.GetExcelSheet<Level>().FirstOrNull(l => l.Object.RowId == eObj.Value.RowId);

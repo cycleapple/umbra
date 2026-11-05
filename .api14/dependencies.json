@@ -1,0 +1,8 @@
+[
+  {
+    "path": "drawing",
+    "baseCommit": "d4468c0338eafd181574ddaca6844ef89685202d",
+    "patch": "patches/27f3282691613a41.patch",
+    "sha256": "c103f391320c3c0712fb5db786224d97af9a2397cf13f73ef711040c9266c266"
+  }
+]

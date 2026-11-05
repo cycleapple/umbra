@@ -1,4 +1,4 @@
-﻿using Dalamud.Interface.ImGuiNotification;
+using Dalamud.Interface.ImGuiNotification;
 
 using Newtonsoft.Json;
 using System.Text;

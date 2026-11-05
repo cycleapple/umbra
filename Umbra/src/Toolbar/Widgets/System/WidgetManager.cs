@@ -1,4 +1,4 @@
-﻿
+
 using Lumina.Misc;
 using System.Collections.Immutable;
 using Umbra.AuxBar;
